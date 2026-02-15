@@ -3,7 +3,13 @@ package es.fplumara.dam1.textapp.files;
 import es.fplumara.dam1.textapp.config.AppConfig;
 
 
-public class TextStoreFactoryDemos{
+public class TextStoreFactoryDemos {
+
+
+    public static es.fplumara.dam1.textapp.files.TextStore getTextStore(StoryType storeType, AppConfig config) {
+
+        return null;
+    }
 
 
     public static class StoreException extends RuntimeException {
@@ -29,7 +35,6 @@ public class TextStoreFactoryDemos{
 
         @Override
         public void save(String text) {
-            // Lógica para guardar en archivo
             System.out.println("Guardando en File: " + text);
         }
 
@@ -66,7 +71,7 @@ public class TextStoreFactoryDemos{
     public static class TextStoreFactory {
 
         public static TextStore createTextStore(AppConfig appConfig) throws StoreException {
-            String type = appConfig.getStoreType();
+            String type = String.valueOf(appConfig.getStoreType());
 
             if (type.equalsIgnoreCase("FILE")) {
                 return new FileTextStore(appConfig);

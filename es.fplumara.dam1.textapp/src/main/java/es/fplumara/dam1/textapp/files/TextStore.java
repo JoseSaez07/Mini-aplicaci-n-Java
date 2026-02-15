@@ -6,4 +6,6 @@ public interface TextStore {
     void guardarMensaje(Message message);
     String readAll();
     String readLast(int n);
+
+    void save(String msg);
 }

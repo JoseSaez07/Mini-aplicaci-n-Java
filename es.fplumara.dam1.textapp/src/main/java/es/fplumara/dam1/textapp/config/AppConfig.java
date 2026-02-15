@@ -15,6 +15,7 @@ public class AppConfig {
     private int messagesMaxLength;
 
     public void setMessagesMaxLength(int messagesMaxLength) {
+
         this.messagesMaxLength = messagesMaxLength;
     }
 
@@ -27,7 +28,7 @@ public class AppConfig {
         this.storeType = storeType;
     }
 
-    public StoryType getStorType(){
+    public StoryType getStoreType(){
     return storeType;
     }
 
@@ -41,7 +42,7 @@ public class AppConfig {
     }
 
 
-    public AppConfig()  {
+    public AppConfig(String csv)  {
         Path path = Path.of("C:\\Users\\JoseSaezSerrano\\Mini-aplicaci-n-Java\\es.fplumara.dam1.textapp\\data\\config.properties");
         Properties properties = new Properties();
         try (InputStream in = Files.newInputStream(path)) {
@@ -52,5 +53,8 @@ public class AppConfig {
 
 
     }
+
+
+
 }
 
